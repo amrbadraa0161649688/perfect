@@ -1,0 +1,129 @@
+.mt-4{
+    margin-top: 42px !important;
+}
+.modal-content{
+    max-width:100% !important
+}
+body.rtl .modal-header .close {
+    margin: -1rem auto -1rem -1rem;
+    float: left;
+}
+body.rtl .dataTables_wrapper thead .sorting:before,
+body.rtl .dataTables_wrapper thead .sorting:after{
+    right: auto;
+    left: 0;
+}
+body.rtl .dataTables_wrapper .dataTables_length {
+    float: right;
+}
+body.rtl .dataTables_wrapper .dataTables_filter {
+    float: left;
+}
+.modal.full {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    padding-inline-end: 0 !important;
+}
+.pagination {
+    flex-wrap: wrap;
+}
+.v-text-field .v-label {
+    top: -10px !important;
+}
+#left-sidebar .menu_option {
+    display: none !important
+}
+.table{
+    width: 100% !important;
+    margin-bottom: 10px !important;
+}
+.table-responsive {
+    padding-bottom: 10px;
+
+}
+.table-responsive::-webkit-scrollbar {
+    height: 10px;
+    background: #eee;
+}
+.table-responsive::-webkit-scrollbar-thumb {
+    background: #004660 !important;
+}
+.avatar {
+    width: 35px;
+    height: 35px;
+}
+#chart-bar{
+   direction: ltr !important; 
+   text-align: left !important;
+}
+.header-action {
+    margin-bottom: 20px;
+}
+label{
+    margin-top: 10px;
+}
+.form-control, .dataTables_wrapper .dataTables_filter {
+    display: inline-block;
+    margin: 2px;
+}
+.btn.w-100{
+    margin: 2px;
+}
+body.rtl .page-item:first-child .page-link {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 0.25rem;
+    border-bottom-right-radius: 0.25rem;
+}
+body.rtl .page-item:last-child .page-link {
+    border-top-left-radius: 0.25rem;
+    border-bottom-left-radius: 0.25rem;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.table td, .table th {
+    font-size: 13px;
+}
+svg{
+    max-width: 100%;
+}
+.auth .auth_left .card {
+    min-width: auto !important;
+    max-width: 100%;
+    margin: 0 auto;
+    left: 0 !important;
+    right: 0 !important;
+}
+.page-header div.avatar.avatar-blue {
+    width: 48px;
+    height: 48px;
+    overflow: hidden;
+}
+.page-header img.avatar.avatar-blue {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+@media only screen and (max-width: 1200px){
+    body.rtl.offcanvas-active #left-sidebar {
+        right: 0;
+        left: auto;
+        position: fixed;
+        z-index: 99;
+    }
+}
+@media screen and (max-width: 991px){
+    .page-header {
+        position: relative;
+        display: block;
+    }
+    .page-header p{
+        right: 60px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    .table td, .table th {
+        font-size: 11px;
+    }
+}

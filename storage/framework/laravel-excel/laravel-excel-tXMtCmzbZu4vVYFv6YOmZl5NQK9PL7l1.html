@@ -1,0 +1,1820 @@
+<!doctype html>
+<html lang="ar" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    
+
+    <title> - Laravel </title>
+
+    <!-- Bootstrap Core and vandor -->
+    <link rel="stylesheet" href="http://localhost/perfect_full_stack/public/assets/plugins/bootstrap/css/bootstrap.min.css"/>
+
+    <!-- Plugins css -->
+    <link rel="stylesheet" href="http://localhost/perfect_full_stack/public/assets/plugins/charts-c3/c3.min.css"/>
+
+    <link rel="stylesheet" href="http://localhost/perfect_full_stack/public/assets/plugins/dropify/css/dropify.min.css">
+
+    <style>
+        td.details-control {
+            background: url('http://localhost/perfect_full_stack/public/assets/images/details_open.png') no-repeat center center;
+            cursor: pointer;
+        }
+
+        tr.shown td.details-control {
+            background: url('http://localhost/perfect_full_stack/public/assets/images/details_close.png') no-repeat center center;
+        }
+        .hidden{
+            display: none;
+        }
+    </style>
+    <link rel="stylesheet" href="http://localhost/perfect_full_stack/public/assets/css/main.css"/>
+    <link rel="stylesheet" href="http://localhost/perfect_full_stack/public/assets/css/theme1.css"/>
+    <link rel="stylesheet" href="http://localhost/perfect_full_stack/public/assets/plugins/dropify/css/dropify.min.css">
+    
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.14.0-beta2/dist/css/bootstrap-select.min.css">
+    <style>
+        .bootstrap-select {
+            width: 100% !important;
+        }
+    </style>
+
+</head>
+
+<body class="font-montserrat sidebar_dark ) rtl ">
+<!-- Page Loader -->
+<div class="page-loader-wrapper">
+    <div class="loader">
+    </div>
+</div>
+
+<div id="main_content">
+
+    <div id="header_top" class="header_top">
+        <div class="container">
+            <div class="hleft">
+                <a class="header-brand" href="http://localhost/perfect_full_stack/public"><i class="fe fe-command brand-logo"></i></a>
+                <div class="dropdown">
+                    <a href="page-search.html" class="nav-link icon"><i class="fa fa-search"></i></a>
+                    <a href="app-calendar.html" class="nav-link icon app_inbox"><i class="fa fa-calendar"></i></a>
+                    <a href="app-contact.html" class="nav-link icon xs-hide"><i class="fa fa-id-card-o"></i></a>
+                    <a href="app-chat.html" class="nav-link icon xs-hide"><i class="fa fa-comments-o"></i></a>
+                    <a href="app-filemanager.html" class="nav-link icon app_file xs-hide"><i class="fa fa-folder-o"></i></a>
+                </div>
+            </div>
+            <div class="hright">
+                <div class="dropdown">
+                    <a href="javascript:void(0)" class="nav-link icon theme_btn">
+                        <i class="fa fa-paint-brush" data-toggle="tooltip" data-placement="right" title="Themes">
+                        </i>
+                    </a>
+                    <a href="javascript:void(0)" class="nav-link icon settingbar"><i class="fa fa-gear fa-spin"
+                                                                                     data-toggle="tooltip"
+                                                                                     data-placement="right"
+                                                                                     title="Settings"></i></a>
+                    <a href="javascript:void(0)" class="nav-link user_btn"><img class="avatar"
+                                                                                src="http://localhost/perfect_full_stack/public/assets/images/user.png"
+                                                                                alt="" data-toggle="tooltip"
+                                                                                data-placement="right"
+                                                                                title="User Menu"/></a>
+                    <a href="javascript:void(0)" class="nav-link icon menu_toggle"><i class="fa  fa-align-left"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="rightsidebar" class="right_sidebar">
+        <a href="javascript:void(0)" class="p-3 settingbar float-right"><i class="fa fa-close"></i></a>
+        <ul class="nav nav-tabs" role="tablist">
+            <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#Settings" aria-expanded="true">Settings</a>
+            </li>
+            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#activity"
+                                    aria-expanded="false">Activity</a></li>
+        </ul>
+        <div class="tab-content">
+            <div role="tabpanel" class="tab-pane vivify fadeIn active" id="Settings" aria-expanded="true">
+                <div class="mb-4">
+                    <h6 class="font-14 font-weight-bold text-muted">Font Style</h6>
+                    <div class="custom-controls-stacked font_setting">
+                        <label class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" class="custom-control-input" name="font" value="font-opensans">
+                            <span class="custom-control-label">Open Sans Font</span>
+                        </label>
+                        <label class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" class="custom-control-input" name="font" value="font-montserrat"
+                                   checked="">
+                            <span class="custom-control-label">Montserrat Google Font</span>
+                        </label>
+                        <label class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" class="custom-control-input" name="font" value="font-roboto">
+                            <span class="custom-control-label">Robot Google Font</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="mb-4">
+                    <h6 class="font-14 font-weight-bold text-muted">Dropdown Menu Icon</h6>
+                    <div class="custom-controls-stacked arrow_option">
+                        <label class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" class="custom-control-input" name="marrow" value="arrow-a">
+                            <span class="custom-control-label">A</span>
+                        </label>
+                        <label class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" class="custom-control-input" name="marrow" value="arrow-b">
+                            <span class="custom-control-label">B</span>
+                        </label>
+                        <label class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" class="custom-control-input" name="marrow" value="arrow-c" checked="">
+                            <span class="custom-control-label">C</span>
+                        </label>
+                    </div>
+                    <h6 class="font-14 font-weight-bold mt-4 text-muted">SubMenu List Icon</h6>
+                    <div class="custom-controls-stacked list_option">
+                        <label class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" class="custom-control-input" name="listicon" value="list-a" checked="">
+                            <span class="custom-control-label">A</span>
+                        </label>
+                        <label class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" class="custom-control-input" name="listicon" value="list-b">
+                            <span class="custom-control-label">B</span>
+                        </label>
+                        <label class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" class="custom-control-input" name="listicon" value="list-c">
+                            <span class="custom-control-label">C</span>
+                        </label>
+                    </div>
+                </div>
+                <div>
+                    <h6 class="font-14 font-weight-bold mt-4 text-muted">General Settings</h6>
+                    <ul class="setting-list list-unstyled mt-1 setting_switch">
+                        <li>
+                            <label class="custom-switch">
+                                <span class="custom-switch-description">Night Mode</span>
+                                <input type="checkbox" name="custom-switch-checkbox"
+                                       class="custom-switch-input btn-darkmode">
+                                <span class="custom-switch-indicator"></span>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="custom-switch">
+                                <span class="custom-switch-description">Fix Navbar top</span>
+                                <input type="checkbox" name="custom-switch-checkbox"
+                                       class="custom-switch-input btn-fixnavbar">
+                                <span class="custom-switch-indicator"></span>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="custom-switch">
+                                <span class="custom-switch-description">Header Dark</span>
+                                <input type="checkbox" name="custom-switch-checkbox"
+                                       class="custom-switch-input btn-pageheader">
+                                <span class="custom-switch-indicator"></span>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="custom-switch">
+                                <span class="custom-switch-description">Min Sidebar Dark</span>
+                                <input type="checkbox" name="custom-switch-checkbox"
+                                       class="custom-switch-input btn-min_sidebar">
+                                <span class="custom-switch-indicator"></span>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="custom-switch">
+                                <span class="custom-switch-description">Sidebar Dark</span>
+                                <input type="checkbox" name="custom-switch-checkbox"
+                                       class="custom-switch-input btn-sidebar" checked="">
+                                <span class="custom-switch-indicator"></span>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="custom-switch">
+                                <span class="custom-switch-description">Icon Color</span>
+                                <input type="checkbox" name="custom-switch-checkbox"
+                                       class="custom-switch-input btn-iconcolor">
+                                <span class="custom-switch-indicator"></span>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="custom-switch">
+                                <span class="custom-switch-description">Gradient Color</span>
+                                <input type="checkbox" name="custom-switch-checkbox"
+                                       class="custom-switch-input btn-gradient">
+                                <span class="custom-switch-indicator"></span>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="custom-switch">
+                                <span class="custom-switch-description">Box Shadow</span>
+                                <input type="checkbox" name="custom-switch-checkbox"
+                                       class="custom-switch-input btn-boxshadow">
+                                <span class="custom-switch-indicator"></span>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="custom-switch">
+                                <span class="custom-switch-description">RTL Support</span>
+                                <input type="checkbox" name="custom-switch-checkbox"
+                                       class="custom-switch-input btn-rtl">
+                                <span class="custom-switch-indicator"></span>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="custom-switch">
+                                <span class="custom-switch-description">Box Layout</span>
+                                <input type="checkbox" name="custom-switch-checkbox"
+                                       class="custom-switch-input btn-boxlayout">
+                                <span class="custom-switch-indicator"></span>
+                            </label>
+                        </li>
+                    </ul>
+                </div>
+                <hr>
+                <div class="form-group">
+                    <label class="d-block">Storage <span class="float-right">77%</span></label>
+                    <div class="progress progress-sm">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="77" aria-valuemin="0"
+                             aria-valuemax="100" style="width: 77%;"></div>
+                    </div>
+                    <button type="button" class="btn btn-primary btn-block mt-3">Upgrade Storage</button>
+                </div>
+            </div>
+            <div role="tabpanel" class="tab-pane vivify fadeIn" id="activity" aria-expanded="false">
+                <ul class="new_timeline mt-3">
+                    <li>
+                        <div class="bullet pink"></div>
+                        <div class="time">11:00am</div>
+                        <div class="desc">
+                            <h3>Attendance</h3>
+                            <h4>Computer Class</h4>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="bullet pink"></div>
+                        <div class="time">11:30am</div>
+                        <div class="desc">
+                            <h3>Added an interest</h3>
+                            <h4>“Volunteer Activities”</h4>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="bullet green"></div>
+                        <div class="time">12:00pm</div>
+                        <div class="desc">
+                            <h3>Developer Team</h3>
+                            <h4>Hangouts</h4>
+                            <ul class="list-unstyled team-info margin-0 p-t-5">
+                                <li><img src="http://localhost/perfect_full_stack/public/assets/images/xs/avatar1.jpg" alt="Avatar"></li>
+                                <li><img src="http://localhost/perfect_full_stack/public/assets/images/xs/avatar2.jpg" alt="Avatar"></li>
+                                <li><img src="http://localhost/perfect_full_stack/public/assets/images/xs/avatar3.jpg" alt="Avatar"></li>
+                                <li><img src="http://localhost/perfect_full_stack/public/assets/images/xs/avatar4.jpg" alt="Avatar"></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="bullet green"></div>
+                        <div class="time">2:00pm</div>
+                        <div class="desc">
+                            <h3>Responded to need</h3>
+                            <a href="javascript:void(0)">“In-Kind Opportunity”</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="bullet orange"></div>
+                        <div class="time">1:30pm</div>
+                        <div class="desc">
+                            <h3>Lunch Break</h3>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="bullet green"></div>
+                        <div class="time">2:38pm</div>
+                        <div class="desc">
+                            <h3>Finish</h3>
+                            <h4>Go to Home</h4>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="theme_div">
+        <div class="card">
+            <div class="card-body">
+                <ul class="list-group list-unstyled">
+                    <li class="list-group-item mb-2">
+                        <p>Default Theme</p>
+                        <a href="../main/index.html"><img src="http://localhost/perfect_full_stack/public/assets/images/themes/default.png"
+                                                          class="img-fluid"/></a>
+                    </li>
+                    <li class="list-group-item mb-2">
+                        <p>Night Mode Theme</p>
+                        <a href="../dark/index.html"><img src="http://localhost/perfect_full_stack/public/assets/images/themes/dark.png"
+                                                          class="img-fluid"/></a>
+                    </li>
+                    <li class="list-group-item mb-2">
+                        <p>RTL Version</p>
+                        <a href="../rtl/index.html"><img src="http://localhost/perfect_full_stack/public/assets/images/themes/rtl.png"
+                                                         class="img-fluid"/></a>
+                    </li>
+                    <li class="list-group-item mb-2">
+                        <p>Theme Version2</p>
+                        <a href="../theme2/index.html"><img src="http://localhost/perfect_full_stack/public/assets/images/themes/theme2.png"
+                                                            class="img-fluid"/></a>
+                    </li>
+                    <li class="list-group-item mb-2">
+                        <p>Theme Version3</p>
+                        <a href="../theme3/index.html"><img src="http://localhost/perfect_full_stack/public/assets/images/themes/theme3.png"
+                                                            class="img-fluid"/></a>
+                    </li>
+                    <li class="list-group-item mb-2">
+                        <p>Theme Version4</p>
+                        <a href="../theme4/index.html"><img src="http://localhost/perfect_full_stack/public/assets/images/themes/theme4.png"
+                                                            class="img-fluid"/></a>
+                    </li>
+                    <li class="list-group-item mb-2">
+                        <p>Horizontal Version</p>
+                        <a href="../horizontal/index.html"><img src="http://localhost/perfect_full_stack/public/assets/images/themes/horizontal.png"
+                                                                class="img-fluid"/></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="user_div">
+        <h5 class="brand-name mb-4">Epic HR<a href="javascript:void(0)" class="user_btn"><i class="icon-logout"></i></a>
+        </h5>
+        <div class="card">
+            <div class="card-body">
+                <div class="media">
+                    <img class="avatar avatar-xl mr-3" src="http://localhost/perfect_full_stack/public/assets/images/sm/avatar1.jpg" alt="avatar">
+                    <div class="media-body">
+                        <h5 class="m-0">Sara Hopkins</h5>
+                        <p class="text-muted mb-0">Webdeveloper</p>
+                        <ul class="social-links list-inline mb-0 mt-2">
+                            <li class="list-inline-item"><a href="javascript:void(0)" title="" data-toggle="tooltip"
+                                                            data-original-title="Facebook"><i
+                                            class="fa fa-facebook"></i></a></li>
+                            <li class="list-inline-item"><a href="javascript:void(0)" title="" data-toggle="tooltip"
+                                                            data-original-title="Twitter"><i class="fa fa-twitter"></i></a>
+                            </li>
+                            <li class="list-inline-item"><a href="javascript:void(0)" title="" data-toggle="tooltip"
+                                                            data-original-title="1234567890"><i class="fa fa-phone"></i></a>
+                            </li>
+                            <li class="list-inline-item"><a href="javascript:void(0)" title="" data-toggle="tooltip"
+                                                            data-original-title="@skypename"><i class="fa fa-skype"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">Statistics</h3>
+                <div class="card-options">
+                    <a href="#" class="card-options-collapse" data-toggle="card-collapse"><i
+                                class="fe fe-chevron-up"></i></a>
+                    <a href="#" class="card-options-remove" data-toggle="card-remove"><i class="fe fe-x"></i></a>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="text-center">
+                    <div class="row">
+                        <div class="col-6 pb-3">
+                            <label class="mb-0">Balance</label>
+                            <h4 class="font-30 font-weight-bold">$545</h4>
+                        </div>
+                        <div class="col-6 pb-3">
+                            <label class="mb-0">Growth</label>
+                            <h4 class="font-30 font-weight-bold">27%</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="d-block">Total Income<span class="float-right">77%</span></label>
+                    <div class="progress progress-xs">
+                        <div class="progress-bar bg-blue" role="progressbar" aria-valuenow="77" aria-valuemin="0"
+                             aria-valuemax="100" style="width: 77%;"></div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="d-block">Total Expenses <span class="float-right">50%</span></label>
+                    <div class="progress progress-xs">
+                        <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="50" aria-valuemin="0"
+                             aria-valuemax="100" style="width: 50%;"></div>
+                    </div>
+                </div>
+                <div class="form-group mb-0">
+                    <label class="d-block">Gross Profit <span class="float-right">23%</span></label>
+                    <div class="progress progress-xs">
+                        <div class="progress-bar bg-green" role="progressbar" aria-valuenow="23" aria-valuemin="0"
+                             aria-valuemax="100" style="width: 23%;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">Friends</h3>
+                <div class="card-options">
+                    <a href="#" class="card-options-collapse" data-toggle="card-collapse"><i
+                                class="fe fe-chevron-up"></i></a>
+                    <a href="#" class="card-options-remove" data-toggle="card-remove"><i class="fe fe-x"></i></a>
+                </div>
+            </div>
+            <div class="card-body">
+                <ul class="right_chat list-unstyled">
+                    <li class="online">
+                        <a href="javascript:void(0);">
+                            <div class="media">
+                                <img class="media-object " src="http://localhost/perfect_full_stack/public/assets/images/xs/avatar4.jpg" alt="">
+                                <div class="media-body">
+                                    <span class="name">Donald Gardner</span>
+                                    <span class="message">Designer, Blogger</span>
+                                    <span class="badge badge-outline status"></span>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="online">
+                        <a href="javascript:void(0);">
+                            <div class="media">
+                                <img class="media-object " src="http://localhost/perfect_full_stack/public/assets/images/xs/avatar5.jpg" alt="">
+                                <div class="media-body">
+                                    <span class="name">Wendy Keen</span>
+                                    <span class="message">Java Developer</span>
+                                    <span class="badge badge-outline status"></span>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="offline">
+                        <a href="javascript:void(0);">
+                            <div class="media">
+                                <img class="media-object " src="http://localhost/perfect_full_stack/public/assets/images/xs/avatar2.jpg" alt="">
+                                <div class="media-body">
+                                    <span class="name">Matt Rosales</span>
+                                    <span class="message">CEO, Epic Theme</span>
+                                    <span class="badge badge-outline status"></span>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="card b-none">
+            <ul class="list-group">
+                <li class="list-group-item d-flex">
+                    <div class="box-icon sm rounded bg-blue"><i class="fa fa-credit-card"></i></div>
+                    <div class="ml-3">
+                        <div>+$29 New sale</div>
+                        <a href="javascript:void(0)">Admin Template</a>
+                        <div class="text-muted font-12">5 min ago</div>
+                    </div>
+                </li>
+                <li class="list-group-item d-flex">
+                    <div class="box-icon sm rounded bg-pink"><i class="fa fa-upload"></i></div>
+                    <div class="ml-3">
+                        <div>Project Update</div>
+                        <a href="javascript:void(0)">New HTML page</a>
+                        <div class="text-muted font-12">10 min ago</div>
+                    </div>
+                </li>
+                <li class="list-group-item d-flex">
+                    <div class="box-icon sm rounded bg-teal"><i class="fa fa-file-word-o"></i></div>
+                    <div class="ml-3">
+                        <div>You edited the file</div>
+                        <a href="javascript:void(0)">reposrt.doc</a>
+                        <div class="text-muted font-12">11 min ago</div>
+                    </div>
+                </li>
+                <li class="list-group-item d-flex">
+                    <div class="box-icon sm rounded bg-cyan"><i class="fa fa-user"></i></div>
+                    <div class="ml-3">
+                        <div>New user</div>
+                        <a href="javascript:void(0)">Puffin web - view</a>
+                        <div class="text-muted font-12">17 min ago</div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="left-sidebar" class="sidebar ">
+
+    <h5 class="brand-name">
+        <a href=" http://localhost/perfect_full_stack/public "> بيرفكت </a>
+        <a href="javascript:void(0)" class="menu_option float-right">
+            <i class="icon-grid font-16" data-toggle="tooltip" data-placement="left" title="Grid & List Toggle"></i>
+        </a>
+    </h5>
+    <nav id="left-sidebar-nav" class="sidebar-nav">
+        <ul class="metismenu">
+            
+            <li class="">
+                <a href="http://localhost/perfect_full_stack/public" class="has-arrow arrow-c">
+                    <i class="fa fa-home"></i>
+                    <span>الرئيسيه</span>
+                </a>
+            </li>
+
+            
+
+                                                                <li class="">
+                        <a href="javascript:void(0)" class="has-arrow arrow-c">
+                            <i class="fa fa-server"></i>
+                            <span>
+                             البيـانات الاساسيه
+                                                        </span>
+                        </a>
+                        <ul>
+                            
+
+                                <li class=""><a                                                 href="http://localhost/perfect_full_stack/public/company-group" >
+                                        
+                                        <span>
+                                         الشركات
+                                                                                </span></a>
+                                </li>
+
+                            
+
+                                <li class=""><a                                                 href="http://localhost/perfect_full_stack/public/company-administrative-structure/departments" >
+                                        
+                                        <span>
+                                         الهياكل الاداريه
+                                                                                </span></a>
+                                </li>
+
+                            
+
+                                <li class=""><a                                                 href="http://localhost/perfect_full_stack/public/job-permissions" >
+                                        
+                                        <span>
+                                         صلاحيات الوظائف
+                                                                                </span></a>
+                                </li>
+
+                            
+
+                                <li class=""><a                                                 href="http://localhost/perfect_full_stack/public/system-code-categories" >
+                                        
+                                        <span>
+                                         اكواد الانظمه
+                                                                                </span></a>
+                                </li>
+
+                            
+
+                                <li class=""><a                                                 href="http://localhost/perfect_full_stack/public/users-add" >
+                                        
+                                        <span>
+                                         بيانات المستخدمين
+                                                                                </span></a>
+                                </li>
+
+                                                    </ul>
+                    </li>
+                                    <li class="">
+                        <a href="javascript:void(0)" class="has-arrow arrow-c">
+                            <i class="fa fa-users"></i>
+                            <span>
+                             المـوارد البشـرية
+                                                        </span>
+                        </a>
+                        <ul>
+                            
+
+                                <li class=""><a                                                 href="http://localhost/perfect_full_stack/public/employees-add" >
+                                        
+                                        <span>
+                                         بيانات الموظفين
+                                                                                </span></a>
+                                </li>
+
+                            
+
+                                <li class=""><a                                                 href="http://localhost/perfect_full_stack/public/employee-requests" >
+                                        
+                                        <span>
+                                         طلبات الموظفين
+                                                                                </span></a>
+                                </li>
+
+                            
+
+                                <li class=""><a                                                 href="http://localhost/perfect_full_stack/public/employees-variable-settings" >
+                                        
+                                        <span>
+                                         اعدادات النظـام
+                                                                                </span></a>
+                                </li>
+
+                            
+
+                                <li class=""><a                                                 href="http://localhost/perfect_full_stack/public/monthly-additions" >
+                                        
+                                        <span>
+                                         الاضــافـات الشهرية
+                                                                                </span></a>
+                                </li>
+
+                            
+
+                                <li class=""><a                                                 href="http://localhost/perfect_full_stack/public/monthly-deductions" >
+                                        
+                                        <span>
+                                         الخصومات الشهرية
+                                                                                </span></a>
+                                </li>
+
+                            
+
+                                <li class=""><a                                                 href="http://localhost/perfect_full_stack/public/monthly-salaries" >
+                                        
+                                        <span>
+                                         رواتب و أجور
+                                                                                </span></a>
+                                </li>
+
+                            
+
+                                <li class=""><a >
+                                        
+                                        <span>
+                                         التقارير
+                                                                                </span></a>
+                                </li>
+
+                                                    </ul>
+                    </li>
+                                    <li class="">
+                        <a href="javascript:void(0)" class="has-arrow arrow-c">
+                            <i class="fa fa-share-alt"></i>
+                            <span>
+                             الحسـابـات العـامه
+                                                        </span>
+                        </a>
+                        <ul>
+                            
+
+                                <li class=""><a >
+                                        
+                                        <span>
+                                         شجرة الحسابات
+                                                                                </span></a>
+                                </li>
+
+                            
+
+                                <li class=""><a >
+                                        
+                                        <span>
+                                         الفترات المحاسبيه
+                                                                                </span></a>
+                                </li>
+
+                            
+
+                                <li class=""><a >
+                                        
+                                        <span>
+                                         المراكز التحليليه
+                                                                                </span></a>
+                                </li>
+
+                            
+
+                                <li class=""><a                                                 href="http://localhost/perfect_full_stack/public/suppliers-add" >
+                                        
+                                        <span>
+                                         بيانات الموردين
+                                                                                </span></a>
+                                </li>
+
+                            
+
+                                <li class=""><a                                                 href="http://localhost/perfect_full_stack/public/customers-add" >
+                                        
+                                        <span>
+                                         بيانات العملاء
+                                                                                </span></a>
+                                </li>
+
+                            
+
+                                <li class=""><a >
+                                        
+                                        <span>
+                                         القيود اليومية
+                                                                                </span></a>
+                                </li>
+
+                            
+
+                                <li class=""><a >
+                                        
+                                        <span>
+                                         التقـاريـر
+                                                                                </span></a>
+                                </li>
+
+                                                    </ul>
+                    </li>
+                                    <li class="">
+                        <a href="javascript:void(0)" class="has-arrow arrow-c">
+                            <i class="fa fa-credit-card"></i>
+                            <span>
+                             السندات المحاسبيه
+                                                        </span>
+                        </a>
+                        <ul>
+                            
+
+                                <li class=""><a                                                 href="http://localhost/perfect_full_stack/public/bonds-add" >
+                                        
+                                        <span>
+                                         سندات القبض
+                                                                                </span></a>
+                                </li>
+
+                            
+
+                                <li class=""><a >
+                                        
+                                        <span>
+                                         سندات الصرف
+                                                                                </span></a>
+                                </li>
+
+                            
+
+                                <li class=""><a >
+                                        
+                                        <span>
+                                         سندات الاضافه
+                                                                                </span></a>
+                                </li>
+
+                            
+
+                                <li class=""><a >
+                                        
+                                        <span>
+                                         سندات الخصم
+                                                                                </span></a>
+                                </li>
+
+                                                    </ul>
+                    </li>
+                                    <li class="">
+                        <a href="javascript:void(0)" class="has-arrow arrow-c">
+                            <i class="fa fa-car"></i>
+                            <span>
+                             تآجيـرالسيـارات
+                                                        </span>
+                        </a>
+                        <ul>
+                            
+
+                                <li class=""><a >
+                                        
+                                        <span>
+                                         بيانات السيارات
+                                                                                </span></a>
+                                </li>
+
+                            
+
+                                <li class=""><a >
+                                        
+                                        <span>
+                                         بيانات العملاء
+                                                                                </span></a>
+                                </li>
+
+                            
+
+                                <li class=""><a >
+                                        
+                                        <span>
+                                         ملفات الاسعار
+                                                                                </span></a>
+                                </li>
+
+                            
+
+                                <li class=""><a >
+                                        
+                                        <span>
+                                         عقـود الإيجـار
+                                                                                </span></a>
+                                </li>
+
+                            
+
+                                <li class=""><a >
+                                        
+                                        <span>
+                                         خطــوط السـير
+                                                                                </span></a>
+                                </li>
+
+                            
+
+                                <li class=""><a >
+                                        
+                                        <span>
+                                         الفواتير المجمعه
+                                                                                </span></a>
+                                </li>
+
+                            
+
+                                <li class=""><a >
+                                        
+                                        <span>
+                                         حــوادث السيـارات
+                                                                                </span></a>
+                                </li>
+
+                            
+
+                                <li class=""><a >
+                                        
+                                        <span>
+                                         التقـاريـر
+                                                                                </span></a>
+                                </li>
+
+                                                    </ul>
+                    </li>
+                                    <li class="">
+                        <a href="javascript:void(0)" class="has-arrow arrow-c">
+                            <i class="fa fa-truck"></i>
+                            <span>
+                             النقليـــات
+                                                        </span>
+                        </a>
+                        <ul>
+                            
+
+                                <li class=""><a                                                 href="http://localhost/perfect_full_stack/public/trucks-add" >
+                                        
+                                        <span>
+                                         بيانات النـاقــلات
+                                                                                </span></a>
+                                </li>
+
+                            
+
+                                <li class=""><a >
+                                        
+                                        <span>
+                                         بيانات المقطورات
+                                                                                </span></a>
+                                </li>
+
+                            
+
+                                <li class=""><a >
+                                        
+                                        <span>
+                                         بيانات المواقع
+                                                                                </span></a>
+                                </li>
+
+                            
+
+                                <li class=""><a                                                 href="http://localhost/perfect_full_stack/public/customers-add" >
+                                        
+                                        <span>
+                                         بيانات العمـلاء
+                                                                                </span></a>
+                                </li>
+
+                            
+
+                                <li class=""><a >
+                                        
+                                        <span>
+                                         ملفات الاسعــار
+                                                                                </span></a>
+                                </li>
+
+                            
+
+                                <li class=""><a                                                 href="http://localhost/perfect_full_stack/public/Waybill-add" >
+                                        
+                                        <span>
+                                         بوليصـه الشحـن
+                                                                                </span></a>
+                                </li>
+
+                            
+
+                                <li class=""><a                                                 href="http://localhost/perfect_full_stack/public/invoices-add" >
+                                        
+                                        <span>
+                                         الفواتيرالضريبية
+                                                                                </span></a>
+                                </li>
+
+                            
+
+                                <li class=""><a                                                 href="http://localhost/perfect_full_stack/public/Waybillcargo-add" >
+                                        
+                                        <span>
+                                         بوليصه  البضائع
+                                                                                </span></a>
+                                </li>
+
+                            
+
+                                <li class=""><a                                                 href="http://localhost/perfect_full_stack/public/Waybillcar-add" >
+                                        
+                                        <span>
+                                         بوليصه السيارات
+                                                                                </span></a>
+                                </li>
+
+                            
+
+                                <li class=""><a                                                 href="http://localhost/perfect_full_stack/public/invoices2-add/create2" >
+                                        
+                                        <span>
+                                         فاتوره
+                                                                                </span></a>
+                                </li>
+
+                            
+
+                                <li class=""><a                                                 href="http://localhost/perfect_full_stack/public/Waybillcargo2-add" >
+                                        
+                                        <span>
+                                         بوليصه نقل صغير
+                                                                                </span></a>
+                                </li>
+
+                                                    </ul>
+                    </li>
+                                    <li class="">
+                        <a href="javascript:void(0)" class="has-arrow arrow-c">
+                            <i class="fa fa-usd"></i>
+                            <span>
+                             المبيعـــات
+                                                        </span>
+                        </a>
+                        <ul>
+                            
+
+                                <li class=""><a >
+                                        
+                                        <span>
+                                         بيانات السيارات
+                                                                                </span></a>
+                                </li>
+
+                            
+
+                                <li class=""><a >
+                                        
+                                        <span>
+                                         بيانات المواقع
+                                                                                </span></a>
+                                </li>
+
+                            
+
+                                <li class=""><a >
+                                        
+                                        <span>
+                                         بيانات العملاء
+                                                                                </span></a>
+                                </li>
+
+                            
+
+                                <li class=""><a >
+                                        
+                                        <span>
+                                         طلب شراء سيارات
+                                                                                </span></a>
+                                </li>
+
+                            
+
+                                <li class=""><a >
+                                        
+                                        <span>
+                                         آوامر شراء سيارات
+                                                                                </span></a>
+                                </li>
+
+                            
+
+                                <li class=""><a >
+                                        
+                                        <span>
+                                         إذن دخول سيارات
+                                                                                </span></a>
+                                </li>
+
+                            
+
+                                <li class=""><a >
+                                        
+                                        <span>
+                                         إذن تحويل سيارات
+                                                                                </span></a>
+                                </li>
+
+                            
+
+                                <li class=""><a >
+                                        
+                                        <span>
+                                         فاتوره بيع سيارات
+                                                                                </span></a>
+                                </li>
+
+                            
+
+                                <li class=""><a >
+                                        
+                                        <span>
+                                         إذن مرتجع سيارات
+                                                                                </span></a>
+                                </li>
+
+                            
+
+                                <li class=""><a >
+                                        
+                                        <span>
+                                         عقود بيع بالاقساط
+                                                                                </span></a>
+                                </li>
+
+                            
+
+                                <li class=""><a >
+                                        
+                                        <span>
+                                         التقـاريـر
+                                                                                </span></a>
+                                </li>
+
+                                                    </ul>
+                    </li>
+                                    <li class="">
+                        <a href="javascript:void(0)" class="has-arrow arrow-c">
+                            <i class="fa fa-gears"></i>
+                            <span>
+                             الصيـــانـة
+                                                        </span>
+                        </a>
+                        <ul>
+                            
+
+                                <li class=""><a                                                 href="http://localhost/perfect_full_stack/public/maintenance-type" >
+                                        
+                                        <span>
+                                         بيانات الاصلاحات
+                                                                                </span></a>
+                                </li>
+
+                            
+
+                                <li class=""><a >
+                                        
+                                        <span>
+                                         الصيانات الدوريه
+                                                                                </span></a>
+                                </li>
+
+                            
+
+                                <li class=""><a                                                 href="http://localhost/perfect_full_stack/public/maintenance-car" >
+                                        
+                                        <span>
+                                         بيانات المركبات
+                                                                                </span></a>
+                                </li>
+
+                            
+
+                                <li class=""><a                                                 href="http://localhost/perfect_full_stack/public/maintenance-card" >
+                                        
+                                        <span>
+                                         كــارت الصيـانـه
+                                                                                </span></a>
+                                </li>
+
+                                                    </ul>
+                    </li>
+                                    <li class="">
+                        <a href="javascript:void(0)" class="has-arrow arrow-c">
+                            <i class="fa fa-cubes"></i>
+                            <span>
+                             المستودعات
+                                                        </span>
+                        </a>
+                        <ul>
+                            
+
+                                <li class=""><a >
+                                        
+                                        <span>
+                                         بيانات المستودعات
+                                                                                </span></a>
+                                </li>
+
+                            
+
+                                <li class=""><a >
+                                        
+                                        <span>
+                                         بيانات الاصنــــــاف
+                                                                                </span></a>
+                                </li>
+
+                            
+
+                                <li class=""><a >
+                                        
+                                        <span>
+                                         طلبـات الشـراء
+                                                                                </span></a>
+                                </li>
+
+                            
+
+                                <li class=""><a >
+                                        
+                                        <span>
+                                         آوامـر الشراء
+                                                                                </span></a>
+                                </li>
+
+                            
+
+                                <li class=""><a >
+                                        
+                                        <span>
+                                         إذن إستـلام
+                                                                                </span></a>
+                                </li>
+
+                            
+
+                                <li class=""><a >
+                                        
+                                        <span>
+                                         فاتوره بيع
+                                                                                </span></a>
+                                </li>
+
+                            
+
+                                <li class=""><a >
+                                        
+                                        <span>
+                                         إذن مـرتجع
+                                                                                </span></a>
+                                </li>
+
+                            
+
+                                <li class=""><a >
+                                        
+                                        <span>
+                                         إذن تحـويـل
+                                                                                </span></a>
+                                </li>
+
+                            
+
+                                <li class=""><a >
+                                        
+                                        <span>
+                                         التقـاريـر
+                                                                                </span></a>
+                                </li>
+
+                                                    </ul>
+                    </li>
+                                    </ul>
+    </nav>
+</div>
+
+
+    <div class="page">
+        <div id="page_top" class="section-body ">
+            <div class="container-fluid">
+                <div class="page-header">
+    <div class="left">
+
+        
+            <div class="avatar avatar-blue" data-toggle="tooltip"
+                 data-placement="top" style="position:absolute;left:50px;"
+                 title="" data-original-title="Avatar Name">
+                <img class="avatar avatar-blue" src="http://www.perfectksa.co:8000/Companies/57010.png">
+            </div>
+            <p style="font-size:15px;font-weight: bold;margin-left:5px;position:absolute;">
+                وقودي للنقل
+                            </p>
+        
+            
+            <p style="font-size:15px;font-weight: bold;position:absolute;left:400px">
+                شركة وقودي
+                            </p>
+        
+
+    </div>
+    <div class="right">
+        <ul class="nav nav-pills">
+
+
+            <p style="font-size:15px;font-weight: bold;">
+                احمد
+                            </p>
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+                   aria-expanded="false">ar</a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="http://localhost/perfect_full_stack/public/locale/en"><img class="w20 mr-2"
+                                                                                    src="http://localhost/perfect_full_stack/public/assets/images/flags/us.svg">English</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="http://localhost/perfect_full_stack/public/locale/ar"><img class="w20 mr-2"
+                                                                                    src="http://localhost/perfect_full_stack/public/assets/images/flags/sa.svg">عربي</a>
+                </div>
+            </li>
+        </ul>
+        <div class="notification d-flex">
+            <div class="dropdown d-flex">
+                <a class="nav-link icon d-none d-md-flex btn btn-default btn-icon ml-1" data-toggle="dropdown"><i
+                            class="fa fa-envelope"></i><span class="badge badge-success nav-unread"></span></a>
+                <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
+                    <ul class="right_chat list-unstyled w250 p-0">
+                        <li class="online">
+                            <a href="javascript:void(0);">
+                                <div class="media">
+                                    <img class="media-object " src="http://localhost/perfect_full_stack/public/assets/images/xs/avatar4.jpg" alt="">
+                                    <div class="media-body">
+                                        <span class="name">Donald Gardner</span>
+                                        <span class="message">Designer, Blogger</span>
+                                        <span class="badge badge-outline status"></span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="online">
+                            <a href="javascript:void(0);">
+                                <div class="media">
+                                    <img class="media-object " src="http://localhost/perfect_full_stack/public/assets/images/xs/avatar5.jpg" alt="">
+                                    <div class="media-body">
+                                        <span class="name">Wendy Keen</span>
+                                        <span class="message">Java Developer</span>
+                                        <span class="badge badge-outline status"></span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="offline">
+                            <a href="javascript:void(0);">
+                                <div class="media">
+                                    <img class="media-object " src="http://localhost/perfect_full_stack/public/assets/images/xs/avatar2.jpg" alt="">
+                                    <div class="media-body">
+                                        <span class="name">Matt Rosales</span>
+                                        <span class="message">CEO, Epic Theme</span>
+                                        <span class="badge badge-outline status"></span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="online">
+                            <a href="javascript:void(0);">
+                                <div class="media">
+                                    <img class="media-object " src="http://localhost/perfect_full_stack/public/assets/images/xs/avatar3.jpg" alt="">
+                                    <div class="media-body">
+                                        <span class="name">Phillip Smith</span>
+                                        <span class="message">Writter, Mag Editor</span>
+                                        <span class="badge badge-outline status"></span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="dropdown-divider"></div>
+                    <a href="javascript:void(0)" class="dropdown-item text-center text-muted-dark readall">Mark all as
+                        read</a>
+                </div>
+            </div>
+            
+                            <div class="dropdown d-flex">
+                    <a class="nav-link icon d-none d-md-flex btn btn-default btn-icon ml-1"
+                       data-toggle="dropdown"><i
+                                class="fa fa-bell"></i><span class="badge badge-primary nav-unread"></span></a>
+                    <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
+
+                        <ul class="list-unstyled feeds_widget">
+                            
+                                <li>
+                                    <div class="feeds-left"><i class="fa fa-bell"></i></div>
+                                    <div class="feeds-body">
+                                        <h4 class="title text-danger">
+                                            إنتهاء مدة مستندات
+                                            <small class="float-right text-muted">2021-10-30 14:40:15</small>
+                                        </h4>
+                                        <small> مستند الهويه الشخصية للموظف -هاني محمد علي محمود- علي وشك الانتهاء </small>
+                                    </div>
+                                </li>
+
+                            
+                                <li>
+                                    <div class="feeds-left"><i class="fa fa-bell"></i></div>
+                                    <div class="feeds-body">
+                                        <h4 class="title text-danger">
+                                            إنتهاء مدة مستندات
+                                            <small class="float-right text-muted">2021-10-30 14:40:16</small>
+                                        </h4>
+                                        <small> مستند جوازالسفر للموظف -هاني محمد علي محمود- علي وشك الانتهاء </small>
+                                    </div>
+                                </li>
+
+                            
+                                <li>
+                                    <div class="feeds-left"><i class="fa fa-bell"></i></div>
+                                    <div class="feeds-body">
+                                        <h4 class="title text-danger">
+                                            إنتهاء مدة مستندات
+                                            <small class="float-right text-muted">2021-10-30 14:40:17</small>
+                                        </h4>
+                                        <small> مستند الهويه الشخصية للموظف -هاني محمد علي محمود- علي وشك الانتهاء </small>
+                                    </div>
+                                </li>
+
+                            
+                                <li>
+                                    <div class="feeds-left"><i class="fa fa-bell"></i></div>
+                                    <div class="feeds-body">
+                                        <h4 class="title text-danger">
+                                            إنتهاء مدة مستندات
+                                            <small class="float-right text-muted">2021-10-30 14:40:18</small>
+                                        </h4>
+                                        <small> مستند رخصه القياده للموظف -هاني محمد علي محمود- علي وشك الانتهاء </small>
+                                    </div>
+                                </li>
+
+                            
+                                <li>
+                                    <div class="feeds-left"><i class="fa fa-bell"></i></div>
+                                    <div class="feeds-body">
+                                        <h4 class="title text-danger">
+                                            إنتهاء مدة مستندات
+                                            <small class="float-right text-muted">2021-11-02 09:16:09</small>
+                                        </h4>
+                                        <small> مستند الهويه الشخصية للموظف -هاجر   المطيري- علي وشك الانتهاء </small>
+                                    </div>
+                                </li>
+
+                                                    </ul>
+                        <div class="dropdown-divider"></div>
+                        <a href="javascript:void(0)" class="dropdown-item text-center text-muted-dark readall">Mark
+                            all
+                            as
+                            read</a>
+
+                    </div>
+                </div>
+                        <div class="dropdown d-flex">
+                <a class="nav-link icon d-none d-md-flex btn btn-default btn-icon ml-1" data-toggle="dropdown"><i
+                            class="fa fa-user"></i></a>
+                <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
+                    <form action="http://localhost/perfect_full_stack/public/logout" method="post">
+                        <input type="hidden" name="_token" value="N5a1oOEBRunqsSAxYz5swZ1OFWfNG7zTGE1pa6Vx">                        <button class="dropdown-item">
+                            <i class="dropdown-icon fe fe-log-out"></i>تسجيل الخروج</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-8 mr-auto ml-auto">
+                            </div>
+        </div>
+
+        
+    <div class="tab-content mt-3">
+        <div class="tab-pane fade show active" id="Departments-list" role="tabpanel">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-options">
+                    </div>
+                </div>
+
+
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered">
+                            <thead>
+                            <tr>
+                                <th>No</th>
+                                <th></th>
+                                <th>الرقم الوظيفي</th>
+                                <th>الاسم عربي</th>
+                                <th>شركه فرعيه</th>
+                                <th>فرع</th>
+                                <th>الحاله</th>
+                                <th>الوظيفة</th>
+                                <th>تاريخ التعين</th>
+                                <th>الهاتف الشخصي</th>
+                                <th>Action</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                                                            <tr>
+                                    <td>1</td>
+                                    <td>
+                                        <div class="avatar avatar-blue" data-toggle="tooltip"
+                                             data-placement="top"
+                                             title="" data-original-title="Avatar Name">
+                                            <img class="avatar avatar-blue" src="http://www.perfectksa.co:8000/Employees/54251.png">
+                                        </div>
+                                    <td>WS0308</td>
+                                    <td>هاجر هريسان عميش المطيري</td>
+                                    <td>وقودي للنقل</td>
+                                    <td>وقودي للنقل - الرياض</td>
+                                    <td>علي راس العمل</td>
+                                    <td>                                            مشرف الموارد البشرية
+                                                                            </td>
+                                    <td>2021-09-19</td>
+                                    <td>0538085844</td>
+                                    <td>
+                                        
+                                                                                    <a class="btn btn-icon"
+                                               href="http://localhost/perfect_full_stack/public/employees-add/33/edit"
+                                               title="تعديل">
+                                                <i class="fa fa-eye"></i>
+                                            </a>
+                                                                            </td>
+                                </tr>
+                                                            <tr>
+                                    <td>2</td>
+                                    <td>
+                                        <div class="avatar avatar-blue" data-toggle="tooltip"
+                                             data-placement="top"
+                                             title="" data-original-title="Avatar Name">
+                                            <img class="avatar avatar-blue" src="http://www.perfectksa.co:8000/Employees/60321.png">
+                                        </div>
+                                    <td>21024</td>
+                                    <td>عماد عبدالحي  الاطير</td>
+                                    <td>وقودي للنقل</td>
+                                    <td>وقودي للنقل - الرياض</td>
+                                    <td>علي راس العمل</td>
+                                    <td>                                            مدير مالي
+                                                                            </td>
+                                    <td>2017-11-18</td>
+                                    <td>0556140403</td>
+                                    <td>
+                                        
+                                                                                    <a class="btn btn-icon"
+                                               href="http://localhost/perfect_full_stack/public/employees-add/37/edit"
+                                               title="تعديل">
+                                                <i class="fa fa-eye"></i>
+                                            </a>
+                                                                            </td>
+                                </tr>
+                                                            <tr>
+                                    <td>3</td>
+                                    <td>
+                                        <div class="avatar avatar-blue" data-toggle="tooltip"
+                                             data-placement="top"
+                                             title="" data-original-title="Avatar Name">
+                                            <img class="avatar avatar-blue" src="http://localhost/perfect_full_stack/public/Employees/99632.png">
+                                        </div>
+                                    <td>21028</td>
+                                    <td>احمد محمد  قدور</td>
+                                    <td>وقودي للنقل</td>
+                                    <td>وقودي للنقل - الرياض</td>
+                                    <td>علي راس العمل</td>
+                                    <td>                                            موظف اداري
+                                                                            </td>
+                                    <td>2019-06-30</td>
+                                    <td>0552155245</td>
+                                    <td>
+                                        
+                                                                                    <a class="btn btn-icon"
+                                               href="http://localhost/perfect_full_stack/public/employees-add/40/edit"
+                                               title="تعديل">
+                                                <i class="fa fa-eye"></i>
+                                            </a>
+                                                                            </td>
+                                </tr>
+                                                            <tr>
+                                    <td>4</td>
+                                    <td>
+                                        <div class="avatar avatar-blue" data-toggle="tooltip"
+                                             data-placement="top"
+                                             title="" data-original-title="Avatar Name">
+                                            <img class="avatar avatar-blue" src="http://www.perfectksa.co:8000/Employees/22986.png">
+                                        </div>
+                                    <td>21030</td>
+                                    <td>عارف كايد  صالح</td>
+                                    <td>وقودي للنقل</td>
+                                    <td>وقودي للنقل - الرياض</td>
+                                    <td>علي راس العمل</td>
+                                    <td>                                            مساعد اداري
+                                                                            </td>
+                                    <td>2019-07-15</td>
+                                    <td>0537750350</td>
+                                    <td>
+                                        
+                                                                                    <a class="btn btn-icon"
+                                               href="http://localhost/perfect_full_stack/public/employees-add/41/edit"
+                                               title="تعديل">
+                                                <i class="fa fa-eye"></i>
+                                            </a>
+                                                                            </td>
+                                </tr>
+                                                            <tr>
+                                    <td>5</td>
+                                    <td>
+                                        <div class="avatar avatar-blue" data-toggle="tooltip"
+                                             data-placement="top"
+                                             title="" data-original-title="Avatar Name">
+                                            <img class="avatar avatar-blue" src="http://localhost/perfect_full_stack/public/Employees/19337.png">
+                                        </div>
+                                    <td>21033</td>
+                                    <td>ابراهيم حامد  القصبي</td>
+                                    <td>وقودي للنقل</td>
+                                    <td>وقودي للنقل - الرياض</td>
+                                    <td>علي راس العمل</td>
+                                    <td>                                            محلل بيانات
+                                                                            </td>
+                                    <td>2018-04-07</td>
+                                    <td>0597985230</td>
+                                    <td>
+                                        
+                                                                                    <a class="btn btn-icon"
+                                               href="http://localhost/perfect_full_stack/public/employees-add/42/edit"
+                                               title="تعديل">
+                                                <i class="fa fa-eye"></i>
+                                            </a>
+                                                                            </td>
+                                </tr>
+                                                            <tr>
+                                    <td>6</td>
+                                    <td>
+                                        <div class="avatar avatar-blue" data-toggle="tooltip"
+                                             data-placement="top"
+                                             title="" data-original-title="Avatar Name">
+                                            <img class="avatar avatar-blue" src="http://localhost/perfect_full_stack/public/Employees/23717.png">
+                                        </div>
+                                    <td>21050</td>
+                                    <td>عبدالعظيم   الليثي</td>
+                                    <td>وقودي للنقل</td>
+                                    <td>وقودي للنقل - الرياض</td>
+                                    <td>علي راس العمل</td>
+                                    <td>                                            لا يوجد عقد ساري
+                                                                            </td>
+                                    <td>2021-08-22</td>
+                                    <td>0540435281</td>
+                                    <td>
+                                        
+                                                                                    <a class="btn btn-icon"
+                                               href="http://localhost/perfect_full_stack/public/employees-add/43/edit"
+                                               title="تعديل">
+                                                <i class="fa fa-eye"></i>
+                                            </a>
+                                                                            </td>
+                                </tr>
+                                                            <tr>
+                                    <td>7</td>
+                                    <td>
+                                        <div class="avatar avatar-blue" data-toggle="tooltip"
+                                             data-placement="top"
+                                             title="" data-original-title="Avatar Name">
+                                            <img class="avatar avatar-blue" src="http://localhost/perfect_full_stack/public/Employees/22435.png">
+                                        </div>
+                                    <td>21004</td>
+                                    <td>غانيش غانيش كومار تابا</td>
+                                    <td>وقودي للنقل</td>
+                                    <td>وقودي للنقل - الرياض</td>
+                                    <td>علي راس العمل</td>
+                                    <td>                                            لا يوجد عقد ساري
+                                                                            </td>
+                                    <td>2016-03-05</td>
+                                    <td>0580389708</td>
+                                    <td>
+                                        
+                                                                                    <a class="btn btn-icon"
+                                               href="http://localhost/perfect_full_stack/public/employees-add/44/edit"
+                                               title="تعديل">
+                                                <i class="fa fa-eye"></i>
+                                            </a>
+                                                                            </td>
+                                </tr>
+                                                            <tr>
+                                    <td>8</td>
+                                    <td>
+                                        <div class="avatar avatar-blue" data-toggle="tooltip"
+                                             data-placement="top"
+                                             title="" data-original-title="Avatar Name">
+                                            <img class="avatar avatar-blue" src="http://localhost/perfect_full_stack/public/Employees/72920.png">
+                                        </div>
+                                    <td>21014</td>
+                                    <td>سونيل   بي كي</td>
+                                    <td>وقودي للنقل</td>
+                                    <td>وقودي للنقل - الرياض</td>
+                                    <td>علي راس العمل</td>
+                                    <td>                                            لا يوجد عقد ساري
+                                                                            </td>
+                                    <td>2017-12-31</td>
+                                    <td>0562929583</td>
+                                    <td>
+                                        
+                                                                                    <a class="btn btn-icon"
+                                               href="http://localhost/perfect_full_stack/public/employees-add/45/edit"
+                                               title="تعديل">
+                                                <i class="fa fa-eye"></i>
+                                            </a>
+                                                                            </td>
+                                </tr>
+                                                            <tr>
+                                    <td>9</td>
+                                    <td>
+                                        <div class="avatar avatar-blue" data-toggle="tooltip"
+                                             data-placement="top"
+                                             title="" data-original-title="Avatar Name">
+                                            <img class="avatar avatar-blue" src="http://localhost/perfect_full_stack/public/Employees/65960.png">
+                                        </div>
+                                    <td>21015</td>
+                                    <td>سوك لال   غرونغ</td>
+                                    <td>وقودي للنقل</td>
+                                    <td>وقودي للنقل - الرياض</td>
+                                    <td>علي راس العمل</td>
+                                    <td>                                            لا يوجد عقد ساري
+                                                                            </td>
+                                    <td>2017-12-31</td>
+                                    <td>0556302410</td>
+                                    <td>
+                                        
+                                                                                    <a class="btn btn-icon"
+                                               href="http://localhost/perfect_full_stack/public/employees-add/46/edit"
+                                               title="تعديل">
+                                                <i class="fa fa-eye"></i>
+                                            </a>
+                                                                            </td>
+                                </tr>
+                                                            <tr>
+                                    <td>10</td>
+                                    <td>
+                                        <div class="avatar avatar-blue" data-toggle="tooltip"
+                                             data-placement="top"
+                                             title="" data-original-title="Avatar Name">
+                                            <img class="avatar avatar-blue" src="http://localhost/perfect_full_stack/public/Employees/47802.png">
+                                        </div>
+                                    <td>21049</td>
+                                    <td>شامبهو بهادور  اديكاري</td>
+                                    <td>وقودي للنقل</td>
+                                    <td>وقودي للنقل - الرياض</td>
+                                    <td>علي راس العمل</td>
+                                    <td>                                            لا يوجد عقد ساري
+                                                                            </td>
+                                    <td>2021-02-24</td>
+                                    <td>0530493083</td>
+                                    <td>
+                                        
+                                                                                    <a class="btn btn-icon"
+                                               href="http://localhost/perfect_full_stack/public/employees-add/47/edit"
+                                               title="تعديل">
+                                                <i class="fa fa-eye"></i>
+                                            </a>
+                                                                            </td>
+                                </tr>
+                                                            <tr>
+                                    <td>11</td>
+                                    <td>
+                                        <div class="avatar avatar-blue" data-toggle="tooltip"
+                                             data-placement="top"
+                                             title="" data-original-title="Avatar Name">
+                                            <img class="avatar avatar-blue" src="http://localhost/perfect_full_stack/public/Employees/76596.png">
+                                        </div>
+                                    <td>21001</td>
+                                    <td>محمد نواز ابراهيم مونيالو</td>
+                                    <td>وقودي للنقل</td>
+                                    <td>وقودي للنقل - الرياض</td>
+                                    <td>علي راس العمل</td>
+                                    <td>                                            لا يوجد عقد ساري
+                                                                            </td>
+                                    <td>2015-10-09</td>
+                                    <td>0581968657</td>
+                                    <td>
+                                        
+                                                                                    <a class="btn btn-icon"
+                                               href="http://localhost/perfect_full_stack/public/employees-add/48/edit"
+                                               title="تعديل">
+                                                <i class="fa fa-eye"></i>
+                                            </a>
+                                                                            </td>
+                                </tr>
+                                                            <tr>
+                                    <td>12</td>
+                                    <td>
+                                        <div class="avatar avatar-blue" data-toggle="tooltip"
+                                             data-placement="top"
+                                             title="" data-original-title="Avatar Name">
+                                            <img class="avatar avatar-blue" src="http://localhost/perfect_full_stack/public/Employees/37161.png">
+                                        </div>
+                                    <td>21005</td>
+                                    <td>لدان   خان</td>
+                                    <td>وقودي للنقل</td>
+                                    <td>وقودي للنقل - الرياض</td>
+                                    <td>علي راس العمل</td>
+                                    <td>                                            لا يوجد عقد ساري
+                                                                            </td>
+                                    <td>2016-10-12</td>
+                                    <td>0561486136</td>
+                                    <td>
+                                        
+                                                                                    <a class="btn btn-icon"
+                                               href="http://localhost/perfect_full_stack/public/employees-add/49/edit"
+                                               title="تعديل">
+                                                <i class="fa fa-eye"></i>
+                                            </a>
+                                                                            </td>
+                                </tr>
+                                                            <tr>
+                                    <td>13</td>
+                                    <td>
+                                        <div class="avatar avatar-blue" data-toggle="tooltip"
+                                             data-placement="top"
+                                             title="" data-original-title="Avatar Name">
+                                            <img class="avatar avatar-blue" src="http://localhost/perfect_full_stack/public/Employees/18127.jpg">
+                                        </div>
+                                    <td>s00001</td>
+                                    <td>احمد     الغامدي</td>
+                                    <td>وقودي للنقل</td>
+                                    <td>وقودي للنقل - الرياض</td>
+                                    <td>علي راس العمل</td>
+                                    <td>                                            محاسب
+                                                                            </td>
+                                    <td>2019-01-15</td>
+                                    <td>05555555555</td>
+                                    <td>
+                                        
+                                                                                    <a class="btn btn-icon"
+                                               href="http://localhost/perfect_full_stack/public/employees-add/64/edit"
+                                               title="تعديل">
+                                                <i class="fa fa-eye"></i>
+                                            </a>
+                                                                            </td>
+                                </tr>
+                                                        </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    </div>
+
+
+</div>
+
+
+<script src="http://localhost/perfect_full_stack/public/assets/bundles/lib.vendor.bundle.js"></script>
+
+<script src="http://localhost/perfect_full_stack/public/assets/bundles/apexcharts.bundle.js"></script>
+<script src="http://localhost/perfect_full_stack/public/assets/bundles/counterup.bundle.js"></script>
+<script src="http://localhost/perfect_full_stack/public/assets/bundles/knobjs.bundle.js"></script>
+<script src="http://localhost/perfect_full_stack/public/assets/bundles/c3.bundle.js"></script>
+<script src="http://localhost/perfect_full_stack/public/assets/bundles/dataTables.bundle.js"></script>
+<script src="http://localhost/perfect_full_stack/public/assets/js/core.js"></script>
+<script src="http://localhost/perfect_full_stack/public/assets/js/datatable.js"></script>
+<script src="http://localhost/perfect_full_stack/public/assets/js/form/form-advanced.js"></script>
+<script src="http://localhost/perfect_full_stack/public/assets/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.js"></script>
+<script src="http://localhost/perfect_full_stack/public/assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
+<script src="http://localhost/perfect_full_stack/public/assets/plugins/bootstrap-multiselect/bootstrap-multiselect.js"></script>
+<script src="http://localhost/perfect_full_stack/public/assets/plugins/multi-select/js/jquery.multi-select.js"></script>
+<script src="http://localhost/perfect_full_stack/public/assets/plugins/jquery.maskedinput/jquery.maskedinput.min.js"></script>
+<script src="http://localhost/perfect_full_stack/public/assets/plugins/jquery-inputmask/jquery.inputmask.bundle.js"></script>
+<script src="http://localhost/perfect_full_stack/public/assets/plugins/dropify/js/dropify.min.js"></script>
+<script src="http://localhost/perfect_full_stack/public/assets/js/index.js"></script>
+</body>
+</html>

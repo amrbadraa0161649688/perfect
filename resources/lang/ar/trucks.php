@@ -1,0 +1,88 @@
+<?php
+return [
+
+    'truck' => 'بيـانات الشاحنات ',
+    'add_new_truck' => 'إضافه ناقلة جـديـدة',
+    'changed_truck' => 'تعـديل بيـانات ناقلة',
+
+    'add_truck' => 'اضافه ناقله',
+
+    'truck_no' => 'رقم الناقلة',
+    'truck_name' => 'اسم الناقلة',
+    'truck_type' => 'نوع الناقلة',
+    'truck_plate' => 'رقم اللوحة',
+    'truck_chasi' => 'رقم الهيكل',
+    'truck_company' => 'تابع لشركة',
+    'sub_company' => ' الشركه الفرعيه',
+    'truck_manufactuer_company' => 'الشركة المصنعه',
+    'truck_driver' => 'اسم السائق ',
+    'driver_id' => 'الهويه  ',
+    'driver_mobil' => 'الجوال  ',
+
+
+    'truck_model' => 'الموديل ',
+    'truck_ownership_status' => 'حاله الملكيه ',
+    'truck_rent_amount' => 'قيمه الايجار',
+    'truck_ownership' => 'اسم المالك ',
+    'truck_supplier' => 'اسم المورد ',
+    'truck_seller' => 'اسم المشتري ',
+    'truck_purchase_date' => 'تاريخ الشراء',
+    'truck_purchase_value' => 'قيمه الشراء ',
+    'truck_depreciation_ratio' => 'نسبه الاهلاك ',
+    'truck_depreciation_years' => 'عدد السنوات  ',
+    'truck_sales_date' => 'تاريخ البيع ',
+    'truck_sales_value' => 'قيمه البيع ',
+    'trucker_status' => 'حاله جهاز التتبع ',
+    'truck_driver_eceived' => 'تاريخ الاستلام ',
+    'truck_driver_delivery' => 'تاريخ التسليم ',
+    'truck_load_weight' => ' الحموله',
+
+    'truck_status' => 'الحاله',
+    'save'=> 'حفـظ',
+
+    'trip_lines' => ' خطوط السير',
+    'add_trip_line' => 'اضافه خط سير',
+    'trip_line_no' => 'رقم خط السير',
+    'trip_line_desc' => 'مواقع خط السير',
+'trip_line_loc_from'=> 'بداية خط السير',
+'trip_line_loc_to'=> 'نهاية خط السير',
+    'trip_line_destinct' => 'المسافه',
+    'trip_line_time' => 'الوقت',
+    'trip_line_fees_3' => 'مصروف ديزل',
+    'trip_line_fees_2' => 'مصروف طريق',
+    'trip_line_fees_1' => 'قيمة الرد',
+    'trip_line_loc' => 'اسم الموقع',
+    'trip_line_serial' => 'مسلسل',
+
+
+    'add_trip' => 'اضافه رحله  ',
+    'last_status_date' => ' تاريخ أخر تعديل ',
+    '' => 'رقم الرحله  ',
+    'trip_date_start' => 'تاريخ الانطلاق المتوقع  ',
+    'trip_date_ex' => 'تاريخ الوصول المتوقع  ',
+    'trip_date_start_act' => 'تاريخ الانطلاق الفعلي  ',
+    'trip_date_arrivel' => 'تاريخ الوصول الفعلي  ',
+    'trip_status' => 'حاله الرحله  ',
+    'trip_counter_start' => 'عداد الانطلاق  ',
+    'trip_counter_end' => 'عداد الوصول  ',
+    'trip_notes' => 'ملاحظات  ',
+    'car_loc_from' => 'من موقع  ',
+    'car_loc_to' => 'الي موقع  ',
+
+    'loc_truck' => ' الفرع  ',
+
+
+    'car_waybill' => 'رقم البوليصه  ',
+    'car_customer' => 'اسم العميل  ',
+    'car_owner' => 'اسم المالك  ',
+    'car_type' => 'نوع السياره  ',
+    'shipping_type' => 'نوع الشحن  ',
+    'car_plate' => 'رقم اللوحه  ',
+    'payment_method' => 'نوع الدفع   ',
+    'car_amount' => 'القيمه    ',
+    'car_payment' => 'المسدد    ',
+    'car_net' => 'المتبقي    ',
+    'trip_car_count' => 'عدد السيارات    ',
+    'trucker_ref_no' => 'كود المقطورة',
+'trip_line_type' => 'نوع خط السير'
+];

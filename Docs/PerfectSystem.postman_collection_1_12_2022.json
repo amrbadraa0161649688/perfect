@@ -1,0 +1,422 @@
+{
+	"info": {
+		"_postman_id": "de2761c3-5710-4c00-9046-9f2c7c8f8756",
+		"name": "PerfectSystem",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21772529"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "register",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.environment.set('token', pm.response.json().data.token)"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "mahmoud",
+									"description": "required|max:30",
+									"type": "text"
+								},
+								{
+									"key": "user_email",
+									"value": "mahmoudn509@gmail.com",
+									"description": "required|email|max:50|unique",
+									"type": "text"
+								},
+								{
+									"key": "user_password",
+									"value": "123456789",
+									"description": "required|min:8|max:20",
+									"type": "text"
+								},
+								{
+									"key": "user_password_confirmation",
+									"value": "123456789",
+									"description": "required|min:8|max:20",
+									"type": "text"
+								},
+								{
+									"key": "user_mobile",
+									"value": "01123003481",
+									"description": "required|max:11|unique",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/auth/register",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "register",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "mahmoud",
+											"description": "required|max:30",
+											"type": "text"
+										},
+										{
+											"key": "user_email",
+											"value": "mahmoudn509@gmail.com",
+											"description": "required|email|max:50|unique",
+											"type": "text"
+										},
+										{
+											"key": "user_password",
+											"value": "123456789",
+											"description": "required|min:8|max:20",
+											"type": "text"
+										},
+										{
+											"key": "user_password_confirmation",
+											"value": "123456789",
+											"description": "required|min:8|max:20",
+											"type": "text"
+										},
+										{
+											"key": "user_mobile",
+											"value": "01123003481",
+											"description": "required|max:11|unique",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}/auth/register",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"auth",
+										"register"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.22.0"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 01 Dec 2022 20:07:41 GMT"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "perfect_session=jhxB6Q79UWwZAKXwvPb1JRleuwkJoptK1pCoxFk4; expires=Fri, 09-Dec-2022 08:07:41 GMT; Max-Age=647999; path=/; httponly; samesite=lax"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMTBiNjMxOTk1MTY1YjFiZWJhZDM5N2VjNGIzNzljNTFlY2M4OWMwNjg2MGI2OTQwYzdlZjI1MmNkYWRlMTMyNTQ5MjliZjc2MTY1NGUxMDciLCJpYXQiOjE2Njk5MjUyNjEuMzYxMTI2LCJuYmYiOjE2Njk5MjUyNjEuMzYxMTI5LCJleHAiOjE2ODU2NTAwNjEuMTY3NzIxLCJzdWIiOiIxMTQ0Iiwic2NvcGVzIjpbXX0.bgbTmde6LrXkKvCZh1jABomYBGl0_KG3JJcj6_gqsGEFIty7Bqd-r4gXEZsb3i2H99JhAQBsOUMvHgE0sVtJP_yM8EAQdDZsJXBIs4TFMs3mVRk2jQsep36EmSjLgqHEL90QTBz7v6QYT2JYltZRKFOIoSh-kFRNf4VpgpuwLV5q_WseoaC-8V0iNh0uTKrLlOmBWzipJ31D-4_Nc5JCVp2ukFxXBOmyJaS0CdXAenmWQ9kb05KzIpaByn11B9CQjasTgez8x5a41cUK1X0a34Cj74IzuVGQ_nbAhVmyJbxwhbwhoW7rYWAaMjs9xHVKz6x76ACNm9fMWN5SVuM7DjW-080gBGwnv7zRia6jL6p59o6twS8KIEDcYrOslOfwmM8IXuheG-jLY3w9KHNPkteHF69L9h5uDlb18ALe0z-WC7Au7WoiC_CKB3k1o0k6FcHKWNUeBFRNXPe_ARNaC_79yWee47YGRzFgNLhTdamKzl8kdwpxK68g6c6EBDaDQlYSFeQ-91r0u7OXr_FCExxCJfFwFNmhPwBZxFin97CVpaB3B-lQwIR49RTngXNykGV3jbu7qDlFoG2NqOScuEiLdI1Jr3Jo1tfnkbXlTFEJzZjb6UWuCW-oCkA-9ygNC6jMkdLNdJUtSG0p7IIaeurTi7xAh6Ofs3_u8PvZ-PY\",\n    \"token_type\": \"bearer\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.environment.set('token', pm.response.json().data.token)"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "user_mobile",
+									"value": "01123003488",
+									"description": "required|email|max:191",
+									"type": "text"
+								},
+								{
+									"key": "user_password",
+									"value": "123456789",
+									"description": "min8",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/auth/login",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Login",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "user_mobile",
+											"value": "01123003488",
+											"description": "required|email|max:191",
+											"type": "text"
+										},
+										{
+											"key": "user_password",
+											"value": "123456789",
+											"description": "min8",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}/auth/login",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.22.0"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 01 Dec 2022 20:08:24 GMT"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "57"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "perfect_session=xqFfydpxHO83d3hVA1NmwChUzvr6Zwd82Ib6JYdY; expires=Fri, 09-Dec-2022 08:08:24 GMT; Max-Age=648000; path=/; httponly; samesite=lax"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMzYxOGM1MjkzYzY1Y2NjZWIzYWNlMWZkZmJiZWFmMmZmNzViMjdiNWZkZDAwMmRmZjJlZTlmYTkxMjkzZGVjMDU4N2FjYTU1Yjk3YjVhYjciLCJpYXQiOjE2Njk5MjUzMDMuNjA5OTg3LCJuYmYiOjE2Njk5MjUzMDMuNjA5OTksImV4cCI6MTY4NTY1MDEwMy40MjAxMTYsInN1YiI6IjExNDMiLCJzY29wZXMiOltdfQ.Og8Hd-_TzNWJ8uNII-TcTzwjgZUjIkpAn62iF0iQ_yLtTsbSXdPOVkvF0I4RhqKgJN1caHp4BDwx4UM1XRMaWvxj0C9qh46UdrMZJdoALHoj8TT_sNhnJlF0UeC9W6yEZceSJfnYRUuVIuz_gbV3J7n7FxnPP2ud4Tz2rETPG3SAxYgoGUJC9r8P9TCLpyB1redlv0YMHzTQYXQMMWjrhOJKy0oZNvWB--lwltW4Fd6d0lTIDLfZHGwpA-3MUfXJg6A5KkyMDGtXDsnBsKEyBDjLD0dLS20bgAYepjrYNcN0MulVaB7EW5uM1DLhnRAjFOn7UZHwAIbVE8zUUiX6oRIjIRq0Y7M3Gu8VIokqpngOLVPA6jvJezPBkP5dmzv_vACluClOcXNqKv1xmjr8oFkI6QH7_LNg83zOngyEwks8ccTzjGhhS_1cWYR5QD3fEJcEQNOq6yCVGvfI4TA_Svg8kYHsc0__DaosGlghAiSAfOKrb_TTVN9n7ZluyTDOSPmZMKil3U_c4uEIt1FUJKWGHL30EYaLAt6i2btO_R4ynf3tk_fRj2AVhwLMJ_hOVxuVmHpn0IxLTdHuhVm0aabH3MoemYh-HaVv8tchzqGEK6dZ2vBDh5lsNWQq_EBN3bYxsw3HC8aKtmhEARyroygE4BOUZ1X0lulckBIZ2Lc\",\n    \"token_type\": \"bearer\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "lang",
+								"type": "text",
+								"value": "ar"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{base_url}}/auth/logout",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"auth",
+								"logout"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Logout",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "lang",
+										"type": "text",
+										"value": "ar"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{base_url}}/logout",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"logout"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 11 Oct 2021 19:31:22 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 11 Oct 2021 19:31:22 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.4.3"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"messages.success_logout\"\n}"
+						}
+					]
+				}
+			]
+		}
+	]
+}
